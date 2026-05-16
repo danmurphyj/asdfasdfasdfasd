@@ -29,7 +29,7 @@ const ERAS = [
     id: "coin",
     num: "03",
     year: "600 BC — 2025",
-    name: "COIN ERA",
+    name: "CASH ERA",
     tag: "GOLD STANDARD",
     blurb: "Kings, banks, fiat, the whole Wall Street circus.",
     img:   "photo3.png",   
@@ -43,22 +43,21 @@ const ERAS = [
     name: "SOLANA ERA",
     tag: "ON-CHAIN",
     blurb: "Blockspace cheap. Dreams cheap. Time to load up.",
-    img:   "/photo4.png",   // ← путь к картинке персонажа, напр. "./assets/chad.png"
-    video: "/solana-bg.mp4",   // ← путь к видео-фону,          напр. "./assets/solana-bg.mp4"
+    img:   "/photo4.png",   
+    video: "/solana-bg.mp4",   
     palette: { bg: "#08081a", fg: "#14F195", accent: "#9945FF", glow: "rgba(153, 69, 255, .9)" },
   },
 ];
-// ============================================================
 
 const TICKER = "$MONEY";
-const CONTRACT = "MoNeY9zPay4SatoshiSolanA1234567890ABCDxyz";
+const CONTRACT = "EiEoDcfqSayby2WwdPkUK5NbxkXPiFS1h4XWJG5spump";
 const SOCIALS = {
-  tg: "https://t.me/moneycoin",
-  x: "https://x.com/moneycoin",
-  dex: "https://dexscreener.com/solana/moneycoin",
+  tg: "https://t.me/money_memecoin",
+  x: "https://x.com/money_memecoin",
+  dex: "https://dexscreener.com/solana/epueb9rmrfnkasmqkkfd41egxdqqd3jgtg4fredifpur",
 };
+const BUY_URL = "https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=EiEoDcfqSayby2WwdPkUK5NbxkXPiFS1h4XWJG5spump";
 
-// ============ CSS-анимированные фоны (fallback без видео) ============
 
 function StoneBg({ hasVideo }) {
   const puffs = [0, 1, 2, 3, 4];
@@ -152,7 +151,6 @@ function SolanaBg({ hasVideo }) {
   );
 }
 
-// ============ Видео-фоны ============
 
 function VideoBg({ eraId }) {
   return (
@@ -181,9 +179,7 @@ function VideoBg({ eraId }) {
   );
 }
 
-// Объединённый фон: сначала видео, поверх — CSS-частицы
 function Bg({ eraId }) {
-  // Проверяем наличие видео для каждой эры один раз
   const hasVideo = Object.fromEntries(ERAS.map((e) => [e.id, !!e.video]));
   return (
     <>
@@ -196,7 +192,6 @@ function Bg({ eraId }) {
   );
 }
 
-// ============ Иконки соцсетей ============
 
 const SocialIcon = ({ kind }) => {
   if (kind === "tg") {
@@ -261,7 +256,6 @@ function CopyButton({ value }) {
   );
 }
 
-// ============ App ============
 
 function App() {
   const [eraIdx, setEraIdx] = useState(3);
@@ -284,7 +278,7 @@ function App() {
     <div style={cssVars}>
       <Bg eraId={era.id} />
 
-      {/* Бегущая строка */}
+      {}
       <div className="marquee" aria-hidden style={{ color: era.palette.fg }}>
         <div className="marquee-track">
           {Array.from({ length: 12 }).map((_, i) => (
@@ -294,7 +288,7 @@ function App() {
       </div>
 
       <div className="shell" data-screen-label="01 Landing">
-        {/* Навигация */}
+        {}
         <div className="nav">
           <div className="logo" style={{ color: era.palette.fg }}>
             <span className="logo-coin" style={{ color: era.palette.accent }} />
@@ -307,12 +301,12 @@ function App() {
           </div>
         </div>
 
-        {/* Сцена */}
+        {}
         <div className="stage">
           <div className="character-frame">
             <div className="character-glow" style={{ background: `radial-gradient(circle, ${era.palette.glow}, transparent 60%)` }} />
 
-            {/* Картинки персонажей — путь задаётся в массиве ERAS выше */}
+            {}
             {ERAS.map((e) => (
               <div
                 key={e.id}
@@ -354,11 +348,11 @@ function App() {
             <div className="tagline" style={{ color: era.palette.fg }}>{era.blurb}</div>
           </div>
 
-          {/* Кнопки действий */}
+          {}
           <div className="actions">
             <button
               className="btn-buy"
-              onClick={() => window.open(SOCIALS.dex, "_blank")}
+              onClick={() => window.open(BUY_URL, "_blank")}
               style={{ background: era.palette.fg, color: era.palette.bg }}
             >
               BUY $MONEY
@@ -370,7 +364,7 @@ function App() {
             </div>
           </div>
 
-          {/* Выбор эры — нажатие меняет фон и персонажа */}
+          {}
           <div className="era-bar">
             {ERAS.map((e, i) => (
               <button
