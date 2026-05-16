@@ -50,13 +50,13 @@ const ERAS = [
 ];
 
 const TICKER = "$MONEY";
-const CONTRACT = "7gpRXzDRHYxARpdPz9z7k4UmPPpEsLnvt54har2bpump";
+const CONTRACT = "GhFuVwnn2hp5nSMEcADgLG3qDvNwsDwsgDJX3RRmpump";
 const SOCIALS = {
   tg: "https://t.me/money_memecoin",
   x: "https://x.com/money_memecoin",
-  dex: "https://dexscreener.com/solana/2mrntdwfvt48vcp956vkvedqtebhlhnrwvdstj24d7ir",
+  dex: "https://dexscreener.com/solana/3qdt4pndyycnzia2bbhv61t6szacvlqx4qyomughkww6",
 };
-const BUY_URL = "https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=7gpRXzDRHYxARpdPz9z7k4UmPPpEsLnvt54har2bpump";
+const BUY_URL = "https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=GhFuVwnn2hp5nSMEcADgLG3qDvNwsDwsgDJX3RRmpump";
 
 
 function StoneBg({ hasVideo }) {
